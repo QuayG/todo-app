@@ -16,15 +16,6 @@ public class Todo {
         id = UUID.randomUUID().toString();
     }
 
-    public TodoStatus advanceStatus(){
-        if (status == TodoStatus.OPEN){
-            status = TodoStatus.IN_PROGRESS;
-        } else if (status == TodoStatus.IN_PROGRESS){
-            status = TodoStatus.DONE;
-        }
-        return status;
-    }
-
     @Override
     public String toString() {
         return "Todo{" +

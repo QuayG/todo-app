@@ -28,4 +28,8 @@ public class TodoController {
         return todoService.getTodoRepo().getTodoList();
     }
 
+    @PutMapping("{id}")
+    public Todo advanceTodo(@RequestBody Todo updatedTodo){
+        return todoService.advanceStatus(updatedTodo);
+    }
 }
