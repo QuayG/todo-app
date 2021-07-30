@@ -13,6 +13,4 @@ public class TodoRepo {
     public TodoRepo(List<Todo> todoList) {
         this.todoList = todoList;
     }
-
-
 }
