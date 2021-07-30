@@ -4,18 +4,19 @@ import de.neuefische.todobackend.model.Todo;
 import org.springframework.stereotype.Repository;
 
 
+import java.util.ArrayList;
 import java.util.List;
 @Repository
 
 public class TodoRepo {
-    private List<Todo> todoList;
+    private List<Todo> todoList = new ArrayList<>();
 
-    public List<Todo> addTodo(String description){
-        Todo newTodo = new Todo(description);
-        todoList.add(newTodo);
-        return todoList;
-
+    public Todo addTodo(Todo newTodo){
+        Todo todo = new Todo(newTodo.getDescription(), newTodo.getStatus());
+        todoList.add(todo);
+        return todo;
     }
+
     public List<Todo> removeTodo(Todo todoToRemove){
         todoList.remove(todoToRemove);
         return todoList;
@@ -24,4 +25,5 @@ public class TodoRepo {
     public List<Todo> getTodoList() {
         return todoList;
     }
+
 }

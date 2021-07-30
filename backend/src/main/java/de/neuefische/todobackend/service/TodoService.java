@@ -17,13 +17,17 @@ public class TodoService {
         this.todoRepo = todoRepo;
     }
 
-    public List<Todo> addTodo(String newTodoDescription) {
-        todoRepo.addTodo(newTodoDescription);
+    public List<Todo> addTodo(Todo newTodo) {
+        todoRepo.addTodo(newTodo);
         return todoRepo.getTodoList();
     }
 
     public List<Todo> removeTodo(Todo todoToRemove) {
         todoRepo.removeTodo(todoToRemove);
         return todoRepo.getTodoList();
+    }
+
+    public TodoRepo getTodoRepo() {
+        return todoRepo;
     }
 }
