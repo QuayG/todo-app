@@ -4,14 +4,14 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Todo {
-    private final UUID id;
+    private final String id;
     private final String description;
     private TodoStatus status;
 
-    public Todo(UUID id, String description) {
-        this.id = id;
+    public Todo(String description) {
         this.description = description;
-        this.status = TodoStatus.OPEN;
+        status = TodoStatus.OPEN;
+        id = UUID.randomUUID().toString();
     }
 
     public TodoStatus advanceStatus(){
