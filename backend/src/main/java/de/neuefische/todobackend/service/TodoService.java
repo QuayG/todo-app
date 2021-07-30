@@ -37,4 +37,9 @@ public class TodoService {
         return todoRepo.advanceStatus(updatedTodo)
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
+
+    public Todo deleteTodo(String id) {
+        return todoRepo.deleteTodo(id)
+                .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    }
 }

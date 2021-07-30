@@ -32,4 +32,9 @@ public class TodoController {
     public Todo advanceTodo(@RequestBody Todo updatedTodo){
         return todoService.advanceStatus(updatedTodo);
     }
+
+    @DeleteMapping("{id}")
+    public Todo deleteTodo(@PathVariable String id){
+        return todoService.deleteTodo(id);
+    }
 }
