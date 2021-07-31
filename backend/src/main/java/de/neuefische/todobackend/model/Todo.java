@@ -11,7 +11,7 @@ public class Todo {
     public Todo(String description, TodoStatus status, String id) {
         this.description = description;
         this.status = status;
-        this.id = id;
+        this.id = UUID.randomUUID().toString();
     }
 
     @Override
