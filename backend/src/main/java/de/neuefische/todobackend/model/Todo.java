@@ -1,7 +1,5 @@
 package de.neuefische.todobackend.model;
 
-import jdk.jshell.Snippet;
-
 import java.util.Objects;
 import java.util.UUID;
 
@@ -10,10 +8,10 @@ public class Todo {
     private final String description;
     private TodoStatus status;
 
-    public Todo(String description, TodoStatus status) {
+    public Todo(String description, TodoStatus status, String id) {
         this.description = description;
         this.status = status;
-        id = UUID.randomUUID().toString();
+        this.id = id;
     }
 
     @Override
